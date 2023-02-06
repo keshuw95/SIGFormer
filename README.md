@@ -1,2 +1,2 @@
 # STDGCN
-This is the data and code repo for paper "A Deep Learning Based Economical Transportation Informatization Framework with Sparsely Located Sensors".
+This is the data and implementation repository for paper "A Deep Learning Based Economical Transportation Informatization Framework with Sparsely Located Sensors".
