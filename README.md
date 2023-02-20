@@ -11,6 +11,6 @@ The dataset comes from PeMS Data Clearinghouse at Caltrans Performance Measureme
 ---
 ## SeData
 SeData is collected by the inductive loop detectors deployed on freeways in Seattle area (Link: https://github.com/zhiyongc/Seattle-Loop-Data).
-*data/sedata
- *mat.csv: Speed data
- *A.mat: Adjacency matrix
+* data/sedata
+ * mat.csv: Speed data
+ * A.mat: Adjacency matrix
