@@ -7,7 +7,6 @@ data/pems07/
 * X.npy: Flow data
 * A.npy: Adjacency matrix
 
-===
 ## SeData
 SeData is collected by the inductive loop detectors deployed on freeways in Seattle area (Link: https://github.com/zhiyongc/Seattle-Loop-Data).\\
 data/sedata
