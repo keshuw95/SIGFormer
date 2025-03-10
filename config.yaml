@@ -1,0 +1,43 @@
+# config.yaml
+
+# General settings
+GLOBAL_SEED: 1
+
+# Dataset and Data Split Parameters
+DATASET: "pems_flow"  # Options: "pems_flow", "metr", "pems03", "pems04", "pems07", "pems08", etc.
+
+# Missing Pattern Parameters
+# Default missing pattern is "cs". Allowed options: "cs", "s", "t", "b", "r"
+MISSING_PATTERNS:
+  - "cs"
+# R_M: Missing ratio (default: 0.2; allowed options: 0.2, 0.4, 0.6, 0.8)
+R_M: 0.25
+R_MI: 0.25
+
+# Model Architecture Parameters
+H: 24       # Time dimension (number of time steps)
+Z: 128      # Embedding dimension
+K: 1        # Diffusion order
+
+# Training Parameters
+N_O_N_M: 100      # Number of sensors to sample from the known set
+MAX_ITER: 200     # Maximum number of training epochs
+LEARNING_RATE: 0.001
+BATCH_SIZE: 16
+
+# Loss and Optimizer Parameters
+LOSS_ALPHA: 0.1
+
+# Scheduler Parameters
+ETA_MIN: 0.001
+
+# Others
+E_MAXVALUE_DICT:
+  metr: 80
+  pems03: 1860
+  pems04: 920
+  pems07: 1500
+  pems08: 1150
+  pems_flow: 220
+
+OUTPUT_CSV: "training_results.csv"
