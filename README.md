@@ -1,8 +1,13 @@
-# SIGFormer
-This is the data and implementation repository for paper "A Deep Learning Based Economical Transportation Informatization Framework with Sparsely Located Sensors".
+# SIGFormer: Spatial-Temporal Inductive Graph Transformer
+SIGFormer is a deep learning model for spatio-temporal forecasting and imputation in transportation networks. By leveraging sparse sensor data—such as that collected from fixed sensors, drones, and mobile vehicles—SIGFormer reconstructs missing traffic information with high accuracy. This repository implements SIGFormer as described in the paper:
 
+**"A Deep Learning Enabled Economical Transportation Informatization Framework with Sparsely Located Sensors"**  
+
+---
 
 ## Project Structure
+```
+.
 ├── config.yaml # Model, training, and dataset parameters. 
 ├── model_sigformer.py # SIGFormer model definition. 
 ├── train.py # Training pipeline. 
@@ -14,7 +19,8 @@ This is the data and implementation repository for paper "A Deep Learning Based 
 ├── good_id.txt # "Good" sensor IDs for experiments. 
 ├── main.py # Unified entry point for training and evaluation. 
 └── README.md # Project documentation.
-
+```
+---
 
 ## Model Overview
 
@@ -47,10 +53,15 @@ The training pipeline in **train.py**:
 ### Running Training
 
 Run training via the unified main entry point:
-
+```bash
+python main.py 
+```
+or
 ```bash
 python main.py --config config.yaml --dataset pems_flow --missing_patterns cs s t b r --r_m 0.4 --r_mi 0.25 --output_csv results.csv
 ```
+
+---
 
 ## Evaluation
 The evaluation routines in evaluate.py:
@@ -62,19 +73,24 @@ The evaluation routines in evaluate.py:
 
 ### Running Evaluation
 - Evaluate a trained model by running:
-
 ```bash
-python main.py --config config.yaml --test --dataset pems_flow --unknown_ratio 0.25 --output_dir evaluation_results --checkpoint <path_to_checkpoint>
+python main.py --test 
+or
+```bash
+python main.py --test --dataset pems_flow --unknown_ratio 0.25 --output_dir evaluation_results --checkpoint <path_to_checkpoint>
 ```
+
+---
 
 ## Experiments
 ### Experiment: Missing Pattern Comparison
 
-The experiment_pattern.ipynb notebook (and its script version) compares reconstruction performance under different missing patterns (e.g., cs, s, t, b, r) on a selected subset of sensors.
+The `experiment_pattern.ipynb` notebook (and its script version) compares reconstruction performance under different missing patterns (e.g., cs, s, t, b, r) on a selected subset of sensors.
 
-#### Experiment: Sensitivity Analysis
-The sensitivity_analysis.ipynb notebook is provided for interactive sensitivity analysis of hyperparameters such as missing ratio, time window length, and embedding dimensions.
+### Experiment: Sensitivity Analysis
+The `sensitivity_analysis.ipynb` notebook is provided for interactive sensitivity analysis of hyperparameters such as missing ratio, time window length, and embedding dimensions.
 
+---
 
 ## Dependencies
 Ensure the following dependencies are installed:
@@ -87,7 +103,7 @@ Ensure the following dependencies are installed:
 - pandas
 - scipy
 
-
+---
 
 ## Data
 ### PeMS data
