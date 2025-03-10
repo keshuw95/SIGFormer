@@ -220,15 +220,17 @@ A small (simulated or real) dataset is provided to demonstrate the software:
 
 ## Instructions for Use
 1. Data Preparation:
-    1. Update `config.yaml` with your dataset paths and parameters if needed.
+    1. Download the raw PeMS data and place it under `data/raw_data/pems_download`.
+    2. Run `data_preprocessing.py` to process daily CSV files and generate the required `.npy` files.
 
 2. Training:
-    1. Run training via: `python main.py`
-    2. Monitor training logs and checkpoints saved under the `checkpoints` folder.
+    1. Update `config.yaml` with your dataset paths and parameters if needed.
+    2. Run training via: `python main.py`
+    3. Monitor logs and checkpoints saved in the `checkpoints` folder.
 
 3. Evaluation:
     1. Run evaluation via: `python main.py --test --checkpoint <your_model_checkpoint.pth>`
-    2. View reconstruction plots in the specified output directory.
+    2. Check the specified output directory for reconstruction plots.
 
 4. Experiments:
     1. Use the provided notebooks (`experiment_pattern.ipynb` and `sensitivity_analysis.ipynb`) for interactive experiments and analysis.
