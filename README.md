@@ -1,9 +1,10 @@
-# SIGFormer: Spatial-Temporal Inductive Graph Transformer
+<h2 align="center"> SIGFormer: <br/>Spatial-Temporal Inductive Graph Transformer </h2>
+
 `SIGFormer` is a deep learning model for spatio-temporal forecasting and imputation in transportation networks. By leveraging sparse sensor data—such as that collected from fixed sensors, drones, and mobile vehicles—`SIGFormer`reconstructs missing traffic information with high accuracy. 
 
 This repository implements `SIGFormer` as described in the paper:
 
-**"A Deep Learning Enabled Economical Transportation Informatization Framework with Sparsely Located Sensors"**  
+***"A Deep Learning Enabled Economical Transportation Informatization Framework with Sparsely Located Sensors"*** 📄
 
 ---
 
@@ -24,7 +25,7 @@ This repository implements `SIGFormer` as described in the paper:
 ```
 ---
 
-## Framework Overview
+## Framework Overview 🔍
 
 <p align="center">
   <img src="figures/framework_architecture.png" alt="Framework workflow and model architecture." width="600"/>
@@ -53,7 +54,7 @@ All configurable parameters are stored in `config.yaml`.
 
 ---
 
-## Training
+## Training 🚀
 
 The training pipeline in `train.py`:
 - Loads the dataset and splits it into training, validation, and test sets.
@@ -76,7 +77,7 @@ python main.py --config config.yaml --dataset pems_flow --missing_patterns cs s 
 
 ---
 
-## Evaluation
+## Evaluation 📊
 The evaluation routines in `evaluate.py`:
 
 - Process the test set using non-overlapping windows.
@@ -106,19 +107,6 @@ The `sensitivity_analysis.ipynb` notebook is provided for interactive sensitivit
 
 ---
 
-## Dependencies
-Ensure the following dependencies are installed:
-- torch
-- numpy
-- matplotlib
-- seaborn
-- scienceplots
-- pyyaml
-- pandas
-- scipy
-
----
-
 ## Data
 ### PeMS flow data
 The dataset comes from PeMS Data Clearinghouse at Caltrans Performance Measurement System (PeMS) (Link: http://pems.dot.ca.gov/).
@@ -130,3 +118,18 @@ The dataset comes from PeMS Data Clearinghouse at Caltrans Performance Measureme
 SeData is collected by the inductive loop detectors deployed on freeways in Seattle area (Link: https://github.com/zhiyongc/Seattle-Loop-Data).
  * data/sedata/mat.csv: Speed data
  * data/sedata/A.mat: Adjacency matrix
+
+---
+
+## Dependencies
+Ensure the following dependencies are installed:
+- torch
+- numpy
+- matplotlib
+- seaborn
+- scienceplots
+- pyyaml
+- pandas
+- scipy
+
+
