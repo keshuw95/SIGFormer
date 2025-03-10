@@ -1,4 +1,4 @@
-#  🚀SIGFormer🚀: Spatial-Temporal Inductive Graph Transformer
+#  🚀SIGFormer: Spatial-Temporal Inductive Graph Transformer
 
 `SIGFormer` is a deep learning model for spatio-temporal forecasting and imputation in transportation networks. By leveraging sparse sensor data—such as that collected from fixed sensors, drones, and mobile vehicles—`SIGFormer`reconstructs missing traffic information with high accuracy. 
 
@@ -14,6 +14,7 @@ This repository implements `SIGFormer` as described in the paper:
 - [Framework Overview](#framework-overview)
 - [Model Architecture](#model-architecture)
 - [Configuration](#configuration)
+- [Data Preprocessing](#data-preprocessing)
 - [Training](#training)
 - [Evaluation](#evaluation)
 - [Experiments](#experiments)
@@ -48,6 +49,17 @@ This repository implements `SIGFormer` as described in the paper:
   <img src="figures/framework_architecture.png" alt="Framework workflow and model architecture." width="600"/>
 </p>
 
+
+`SIGFormer` is a transformer-based model for reconstructing missing traffic data using spatial-temporal graphs. The framework builds a **masked spatial-temporal graph**, applies **subgraph sampling** for training, and uses **SIGFormer encoder-decoder blocks** to infer missing values. The model captures dynamic traffic patterns and ensures robust data imputation.  
+
+## 📌 Key Features  
+- Graph-based representation of sparse sensor data  
+- Inductive learning for unseen nodes and time steps 
+- Transformer-based encoder-decoder for data completion  
+- Adaptive node and adjacency representations  
+- Scalable subgraph sampling for efficient training  
+
+
 ---
 ## Model Architecture
 
@@ -69,6 +81,24 @@ This repository implements `SIGFormer` as described in the paper:
 All configurable parameters are stored in `config.yaml`. 
 
 ---
+
+
+## Data Preprocessing 🛠️
+
+Raw data from PeMS should be downloaded and placed under `data/raw_data/pems_download`. The preprocessing script **data_preprocessing.py** performs the following steps:
+- **Daily File Processing:**  
+  Reads daily CSV files to compute a matrix of average flow per lane.  
+- **Time Alignment:**  
+  Pivots the data into a consistent time-series format with 288 five-minute intervals per day.  
+- **Smoothing:**  
+  Applies a moving average filter with outlier correction to smooth sensor readings.  
+- **Concatenation & Finalization:**  
+  Concatenates daily matrices along the time axis and saves the processed matrices as NumPy files (e.g., `data/pems_flow/node_values.npy` and `data/pems_flow/adj_mat.npy`).
+
+
+---
+
+
 
 ## Training
 
