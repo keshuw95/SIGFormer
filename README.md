@@ -1,4 +1,4 @@
-#  🚀SIGFormer: Spatial-Temporal Inductive Graph Transformer
+#  🚀SIGFormer🚀: Spatial-Temporal Inductive Graph Transformer
 
 `SIGFormer` is a deep learning model for spatio-temporal forecasting and imputation in transportation networks. By leveraging sparse sensor data—such as that collected from fixed sensors, drones, and mobile vehicles—`SIGFormer`reconstructs missing traffic information with high accuracy. 
 
