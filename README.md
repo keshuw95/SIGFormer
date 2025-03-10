@@ -144,6 +144,9 @@ python main.py --test
 ---
 
 ## Experiments
+
+_Note: Evaluation results can vary due to the random selection of subgraphs and random seed settings._
+
 ### Experiment: Missing Pattern Comparison
 
 The `experiment_pattern.ipynb` notebook (and its script version) compares reconstruction performance under different missing patterns (e.g., cs, s, t, b, r) on a selected subset of sensors.
