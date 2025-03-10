@@ -52,7 +52,7 @@ This repository implements `SIGFormer` as described in the paper:
 
 `SIGFormer` is a transformer-based model for reconstructing missing traffic data using spatial-temporal graphs. The framework builds a **masked spatial-temporal graph**, applies **subgraph sampling** for training, and uses **SIGFormer encoder-decoder blocks** to infer missing values. The model captures dynamic traffic patterns and ensures robust data imputation.  
 
-## 📌 Key Features  
+### 📌 Key Features  
 - Graph-based representation of sparse sensor data  
 - Inductive learning for unseen nodes and time steps 
 - Transformer-based encoder-decoder for data completion  
