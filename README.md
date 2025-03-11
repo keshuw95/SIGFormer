@@ -28,18 +28,27 @@ This repository implements `SIGFormer` as described in the paper:
 
 ## Project Structure
 ```
-.
-├── config.yaml # Model, training, and dataset parameters. 
-├── model_sigformer.py # SIGFormer model definition. 
-├── train.py # Training pipeline. 
-├── evaluate.py # Evaluation routines. 
-├── experiment_pattern.ipynb # Notebook for missing pattern experiments. 
-├── sensitivity_analysis.ipynb # Notebook for hyperparameter sensitivity analysis. 
-├── utils.py # Data loading and graph construction utilities. 
-├── generate_mask.py # Functions for generating missing masks. 
-├── good_id.txt # "Good" sensor IDs for experiments. 
-├── main.py # Unified entry point for training and evaluation. 
-└── README.md # Project documentation.
+. 
+├── checkpoints   
+│ └── SIGFormer_pems_flow # Folder containing best model checkpoints
+├── config.yaml
+├── data 
+│   ├── pems_flow # Processed data (adjacency matrix, sensor locations, node values) 
+│   └── sedata # Processed data for Seattle Loop dataset 
+├── raw_data 
+│   └── pems_download # Raw downloaded files from PeMS (daily CSVs) 
+├── data_preprocessing.py 
+├── main.py 
+├── train.py 
+├── evaluate.py 
+├── model_sigformer.py 
+├── generate_mask.py 
+├── sensitivity_analysis.ipynb 
+├── experiment_pattern.ipynb 
+├── utils.py 
+├── requirements.txt 
+└── README.md 
+
 ```
 ---
 
@@ -83,7 +92,7 @@ All configurable parameters are stored in `config.yaml`.
 ---
 
 
-## Data Preprocessing 🛠️
+## Data Preprocessing
 
 Raw data from PeMS should be downloaded and placed under `data/raw_data/pems_download`. The preprocessing script **data_preprocessing.py** performs the following steps:
 - **Daily File Processing:**  
@@ -178,15 +187,16 @@ SeData is collected by the inductive loop detectors deployed on freeways in Seat
 
 ### Dependencies
 Ensure the following dependencies are installed:
-- torch
-- numpy
-- matplotlib
-- seaborn
-- scienceplots
-- pyyaml
-- pandas
-- scipy
-
+```
+torch
+numpy
+matplotlib
+seaborn
+scienceplots
+pyyaml
+pandas
+scipy
+```
 ### Installation Guide:
 
 Install dependencies via pip:
@@ -199,7 +209,7 @@ pip install torch numpy matplotlib seaborn scienceplots pyyaml pandas scipy
 ---
 
 
-## Demo 🎥
+## Demo
 A small (simulated or real) dataset is provided to demonstrate the software:
 
 ### Training Demo:
